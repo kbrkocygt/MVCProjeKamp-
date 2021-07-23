@@ -1,0 +1,12 @@
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.dll.config
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.dll
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.pdb
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.dll
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.xml
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csprojAssemblyReference.cache
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CoreCompileInputs.cache
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CopyComplete
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.dll
+C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.pdb
