@@ -10,3 +10,14 @@ C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.cs
 C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CopyComplete
 C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.dll
 C:\Users\kcgtk\source\repos\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.pdb
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.dll.config
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntittyLayer.pdb
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.xml
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CoreCompileInputs.cache
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CopyComplete
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.pdb

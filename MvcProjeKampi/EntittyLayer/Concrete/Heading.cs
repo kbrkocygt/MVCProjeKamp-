@@ -21,7 +21,7 @@ namespace EntittyLayer.Concrete
         
         public int CategoryID { get; set; }
         //virtual anahtar kelime kategori tablosundan bir sutunla ilişkilendir
-        public virtual  Category Category{ get; set; }
+        public virtual  Category Category { get; set; }
 
         //baslık hangı yazar tarafından olusturuldu ilişkisi 1 e çok ilişki
         public int WriterID { get; set; }

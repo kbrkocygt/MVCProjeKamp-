@@ -12,7 +12,7 @@ namespace EntittyLayer.Concrete
         [Key]
         public int WriterID { get; set; }
         [StringLength(50)]
-        public String WriteName { get; set; }
+        public String WriterName { get; set; }
         [StringLength(50)]
         public string WriterSurname { get; set; }
         [StringLength(100)]
