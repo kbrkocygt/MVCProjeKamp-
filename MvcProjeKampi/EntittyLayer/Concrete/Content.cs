@@ -15,6 +15,7 @@ namespace EntittyLayer.Concrete
         public String ContentValue { get; set; }
 
         public DateTime ContentDate{ get; set; }
+        public bool ContentStatus { get; set; }
 
         //heading ile ilşkili sutunlar
         public int  HeadingID{ get; set; }

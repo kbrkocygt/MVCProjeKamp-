@@ -15,10 +15,11 @@ namespace EntittyLayer.Concrete
         public string HeadingName { get; set; }
  
         public DateTime HeadingDate { get; set; }
+        public bool HeadingStatus { get; set; }
 
 
         //kategori tablosundaki id ile burdaki id ismi aynı olacak
-        
+
         public int CategoryID { get; set; }
         //virtual anahtar kelime kategori tablosundan bir sutunla ilişkilendir
         public virtual  Category Category { get; set; }
