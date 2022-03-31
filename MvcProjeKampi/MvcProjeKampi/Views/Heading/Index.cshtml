@@ -95,7 +95,8 @@
                                 </ul>
                             </td>
                             <td>
-                                @(item.HeadingStatus == true ? "Pasif Et" : "Aktif Et")
+                                @item.HeadingStatus
+                                @*@(item.HeadingStatus == true ? "Pasif Et" : "False")*@
                             </td>
                             <td class="project-state">
                                 <span class="@color">@item.Category.CategoryName</span>
@@ -111,10 +112,10 @@
                                     </i>
                                     
                                 </a>
-                                <a class=" @(item.HeadingStatus==true ? "btn btn-danger":"btn btn-success")"  href="/Heading/DeleteHeading/@item.HeadingID" >
+                                <a class=" @(item.HeadingStatus==true ? "btn btn-danger":"btn btn-success")" href="/Heading/DeleteHeading/@item.HeadingID">
                                     <i class="fas fa-trash">
                                     </i>
-                                    Sil
+                                    @(item.HeadingStatus == true ? "Pasif Et" : "Aktif Et")
                                 </a>
                             </td>
                         </tr>
