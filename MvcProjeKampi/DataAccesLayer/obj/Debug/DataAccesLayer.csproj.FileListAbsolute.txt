@@ -37,3 +37,14 @@ C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAc
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_contentStatus.resources
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_headingStatus.resources
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_MessageClass.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_add_messageDraft.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_contactDate.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_ımagefilesTable.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_adminTable.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\bin\Debug\SimpleCrypto.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_AdminSalt.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_tableSkil.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_skilTable.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_ısread_message.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_yetenek_stringlength.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_saltwriter.resources

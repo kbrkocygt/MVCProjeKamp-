@@ -21,3 +21,5 @@ C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\Entitt
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csproj.CopyComplete
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.dll
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.pdb
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Debug\SimpleCrypto.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Debug\EntittyLayer.csprojAssemblyReference.cache

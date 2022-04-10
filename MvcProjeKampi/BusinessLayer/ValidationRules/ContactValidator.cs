@@ -14,7 +14,12 @@ namespace BusinessLayer.ValidationRules
         public ContactValidator()
         {
             RuleFor(x => x.UserMail).NotEmpty().WithMessage("Mail adresini boş geçemezsiniz");
-
+            RuleFor(x => x.UserMail)
+            .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").WithMessage("Geçerli bir e-posta değil")
+            .NotEmpty();
+            RuleFor(x => x.UserMail)
+            .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").WithMessage("Geçerli bir e-posta değil")
+            .NotEmpty();
             RuleFor(x => x.Subject).NotEmpty().WithMessage("Konu Adını boş geçemezsiniz.");
             RuleFor(x => x.UserName).NotEmpty().WithMessage("Kullanıcı adını boş geçemezsiniz.");
             RuleFor(x => x.Subject).MinimumLength(3).WithMessage("Lütfen en az 3 karakter girişi yapınız.");

@@ -1,12 +1,9 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccesLayer.Abstract;
-using DataAccesLayer.Concrete;
 using EntittyLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
@@ -24,15 +21,14 @@ namespace BusinessLayer.Concrete
             return _messageDal.Get(x => x.MessageID==id);
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string p)
         {
-            
-            return _messageDal.List(x => x.RecevierMail == "admin@gmail.com"); //alıcısı admin olanlar 
+            return _messageDal.List(x => x.RecevierMail == p); //alıcısı admin olanlar 
         }
 
-        public List<Message> GetListSendbox()
+        public List<Message> GetListSendbox(string p)
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com"); //gönderen kişi admin olanlar
+            return _messageDal.List(x => x.SenderMail == p); //gönderen kişi admin olanlar
         }
 
         public void MessageAdd(Message message)
@@ -40,14 +36,31 @@ namespace BusinessLayer.Concrete
             _messageDal.Insert(message);
         }
 
+        public int MessageCount()
+        {
+          return  _messageDal.List().Count();
+        }
+        public int GetCountUnreadMessage(string p)
+        {
+            return _messageDal.List(x => !x.isRead && x.RecevierMail == p).Count;
+        }
+        public int GetCountUnreadSenderMessage(string p)
+        {
+            return _messageDal.List(x => !x.isRead && x.SenderMail == p).Count;
+        }
         public void MessageDelete(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Delete(message);
         }
 
         public void MessageUpdate(Message message)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Message> GetInbox(string aranacak)
+        {
+            return _messageDal.List(x => x.MessageContent.Contains(aranacak));
         }
     }
 }

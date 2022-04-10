@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -52,11 +55,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\About.cs" />
+    <Compile Include="Concrete\Admin.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\Content.cs" />
     <Compile Include="Concrete\Heading.cs" />
+    <Compile Include="Concrete\ImageFile.cs" />
     <Compile Include="Concrete\Message.cs" />
+    <Compile Include="Concrete\Skil.cs" />
     <Compile Include="Concrete\Writer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

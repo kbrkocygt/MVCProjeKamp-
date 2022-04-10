@@ -17,8 +17,8 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 @*<div class="col-sm-6">
-                    <h1>MesajSayfası</h1>
-                </div>*@
+                        <h1>MesajSayfası</h1>
+                    </div>*@
 
             </div>
         </div><!-- /.container-fluid -->
@@ -26,8 +26,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("MessageListPartial" , "Message")
-          
+            @Html.Action("MessageListPartial", "Message")
+
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
                     <div class="card-header">
@@ -51,22 +51,8 @@
                             <button type="button" class="btn btn-default btn-sm checkbox-toggle">
                                 <i class="far fa-square"></i>
                             </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-                            <div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>
-                                <!-- /.btn-group -->
-                            </div>
-                            <!-- /.float-right -->
+                            <a href="/Message/DeleteMessage/" class="btn btn-default btn-sm  far fa-trash-alt"> </a>
+
                         </div>
                         <div class="table-responsive mailbox-messages">
                             <table class="table table-hover table-striped">
@@ -78,7 +64,7 @@
                                         <tr>
                                             <td>
                                                 <div class="icheck-primary">
-                                                    <input type="checkbox" value="" id="check1">
+                                                    <input type="checkbox" class="check" value="" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>
@@ -88,7 +74,7 @@
                                                 <b>@item.Subject</b> - @item.Message...
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">@(((DateTime)item.ContactDate).ToString("dd.MMM.yyyy"))</td>
                                         </tr>
                                     }
                                 </tbody>
@@ -100,17 +86,6 @@
                     <!-- /.card-body -->
                     <div class="card-footer p-0">
                         <div class="mailbox-controls">
-                            <!-- Check all button -->
-                            <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                                <i class="far fa-square"></i>
-                            </button>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                            </div>
-                            <!-- /.btn-group -->
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                             <div class="float-right">
                                 1-50/200
                                 <div class="btn-group">
@@ -129,6 +104,17 @@
         </div>
         <!-- /.row -->
     </section>
-
+    <script>
+        $('.check').click(function () {
+            var tableRow = $(this).parent().parent();
+            var id = $(this).attr('id');
+            $.ajax({
+                url: 'http://www.YOURDOMAIN.com/Controller/Action/' + id,
+                success: function (data) {
+                    $(tableRow).remove();
+                }
+            });
+    )};
+    </script>
 </body>
 </html>

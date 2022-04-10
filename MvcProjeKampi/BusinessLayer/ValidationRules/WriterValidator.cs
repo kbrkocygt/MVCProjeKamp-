@@ -1,4 +1,5 @@
-﻿using EntittyLayer.Concrete;
+﻿using DataAccesLayer.Concrete;
+using EntittyLayer.Concrete;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace BusinessLayer.ValidationRules
 
         public WriterValidator()
         {
-           
+            Context c = new Context();
             RuleFor(x => x.WriterName).NotEmpty().WithMessage("Yazar Adını boş geçemezsiniz.");
             RuleFor(x => x.WriterSurname).NotEmpty().WithMessage("Yazar soyadını boş geçemezsiniz.");
             RuleFor(x => x.WriterAbout).NotEmpty().WithMessage("Hakkımda kısmını boş geçemezsiniz.");
@@ -21,6 +22,11 @@ namespace BusinessLayer.ValidationRules
             RuleFor(x => x.WriterAbout).MinimumLength(2).WithMessage("Lütfen en az iki karakter girişi yapın..");
             RuleFor(x => x.WriterAbout).Must(x=>x!=null && x.ToUpper().Contains("A")).WithMessage("Hakkımda kısmında en az bir a harbi içermelidir.");
             RuleFor(x => x.WriterSurname).MaximumLength(20).WithMessage("Lütfen 50  karakterden fazla değer girişi yapmayınız.");
+            RuleFor(x => x.WriterMail)
+              .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").WithMessage("Geçerli bir e-posta değil")
+              .NotEmpty();
+         
+
         }
     }
 }

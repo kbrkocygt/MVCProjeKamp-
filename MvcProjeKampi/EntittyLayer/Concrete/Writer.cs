@@ -35,7 +35,7 @@ namespace EntittyLayer.Concrete
 
         
         public bool WriterStatus { get; set; }
-
+        public string Salt { get; set; }
         //baslık ve yazar ilişkisi
         public ICollection<Heading>Headings { get; set; }
 

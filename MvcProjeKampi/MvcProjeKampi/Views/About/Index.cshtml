@@ -5,12 +5,11 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Hakkımda Listesi</h2>
+<h2>Hakkında Veri Listesi</h2>
 <table class="table table-bordered">
-
     <tr>
         <th>ID</th>
-        <th>Başlık</th>
+        <th>Hakkımda Başlığı</th>
         <th>Aktif Yap</th>
         <th>Pasif Yap</th>
     </tr>
@@ -19,11 +18,10 @@
         <tr>
             <td>@item.AboutID</td>
             <td>Başlık</td>
-            <td><a class="btn btn-warning"> Aktif Yap</a></td>
-            <td><a class="btn btn-danger"> Pasif Yap</a></td>
+            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
+            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+            <td></td>
         </tr>
     }
 </table>
-
-
-@Html.Action("AboutPartial" ,"About")
+@Html.Action("AboutPartial", "About")

@@ -9,8 +9,10 @@ namespace BusinessLayer.Abstract
 {
     public interface IMessageService
     {
-        List<Message> GetListInbox();
-        List<Message> GetListSendbox();
+        int MessageCount();
+        List<Message> GetListInbox(string p);
+        List<Message> GetInbox(string aranacak);
+        List<Message> GetListSendbox(string p);
         void MessageAdd(Message message);
         Message GetByID(int id);
         void MessageDelete(Message message);

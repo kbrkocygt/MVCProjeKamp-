@@ -3,9 +3,7 @@ using DataAccesLayer.Abstract;
 using EntittyLayer.Concrete;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace BusinessLayer.Concrete
 {
@@ -26,6 +24,11 @@ namespace BusinessLayer.Concrete
         public List<Writer> GetList()
         {
             return _writerDal.List();
+        }
+
+        public List<Writer> GetListByWriter(int id)
+        {
+            return _writerDal.List(x => x.WriterID == id);
         }
 
         public void WriterAdd(Writer writer)

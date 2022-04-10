@@ -40,6 +40,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,8 +59,11 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageFileDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISkilDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
@@ -66,7 +72,10 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfImageFileDal.cs" />
+    <Compile Include="EntityFramework\EfAdminDal.cs" />
     <Compile Include="EntityFramework\EfMessageDal.cs" />
+    <Compile Include="EntityFramework\EfSkilDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202203262148326_mig_writerTitle_add.cs" />
     <Compile Include="Migrations\202203262148326_mig_writerTitle_add.designer.cs">
@@ -91,6 +100,46 @@
     <Compile Include="Migrations\202203301233106_mig_MessageClass.cs" />
     <Compile Include="Migrations\202203301233106_mig_MessageClass.designer.cs">
       <DependentUpon>202203301233106_mig_MessageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203311252541_mig_add_messageDraft.cs" />
+    <Compile Include="Migrations\202203311252541_mig_add_messageDraft.designer.cs">
+      <DependentUpon>202203311252541_mig_add_messageDraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204010824225_mig_contactDate.cs" />
+    <Compile Include="Migrations\202204010824225_mig_contactDate.designer.cs">
+      <DependentUpon>202204010824225_mig_contactDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204011200474_add_ımagefilesTable.cs" />
+    <Compile Include="Migrations\202204011200474_add_ımagefilesTable.designer.cs">
+      <DependentUpon>202204011200474_add_ımagefilesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204021304248_add_adminTable.cs" />
+    <Compile Include="Migrations\202204021304248_add_adminTable.designer.cs">
+      <DependentUpon>202204021304248_add_adminTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204022005380_add_AdminSalt.cs" />
+    <Compile Include="Migrations\202204022005380_add_AdminSalt.designer.cs">
+      <DependentUpon>202204022005380_add_AdminSalt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204022135345_add_tableSkil.cs" />
+    <Compile Include="Migrations\202204022135345_add_tableSkil.designer.cs">
+      <DependentUpon>202204022135345_add_tableSkil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204022215046_add_skilTable.cs" />
+    <Compile Include="Migrations\202204022215046_add_skilTable.designer.cs">
+      <DependentUpon>202204022215046_add_skilTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204022239474_add_ısread_message.cs" />
+    <Compile Include="Migrations\202204022239474_add_ısread_message.designer.cs">
+      <DependentUpon>202204022239474_add_ısread_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204031122193_mig_yetenek_stringlength.cs" />
+    <Compile Include="Migrations\202204031122193_mig_yetenek_stringlength.designer.cs">
+      <DependentUpon>202204031122193_mig_yetenek_stringlength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204081957131_add_saltwriter.cs" />
+    <Compile Include="Migrations\202204081957131_add_saltwriter.designer.cs">
+      <DependentUpon>202204081957131_add_saltwriter.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +172,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203301233106_mig_MessageClass.resx">
       <DependentUpon>202203301233106_mig_MessageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203311252541_mig_add_messageDraft.resx">
+      <DependentUpon>202203311252541_mig_add_messageDraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204010824225_mig_contactDate.resx">
+      <DependentUpon>202204010824225_mig_contactDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204011200474_add_ımagefilesTable.resx">
+      <DependentUpon>202204011200474_add_ımagefilesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204021304248_add_adminTable.resx">
+      <DependentUpon>202204021304248_add_adminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204022005380_add_AdminSalt.resx">
+      <DependentUpon>202204022005380_add_AdminSalt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204022135345_add_tableSkil.resx">
+      <DependentUpon>202204022135345_add_tableSkil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204022215046_add_skilTable.resx">
+      <DependentUpon>202204022215046_add_skilTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204022239474_add_ısread_message.resx">
+      <DependentUpon>202204022239474_add_ısread_message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204031122193_mig_yetenek_stringlength.resx">
+      <DependentUpon>202204031122193_mig_yetenek_stringlength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204081957131_add_saltwriter.resx">
+      <DependentUpon>202204081957131_add_saltwriter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

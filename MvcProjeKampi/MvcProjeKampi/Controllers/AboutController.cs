@@ -1,10 +1,7 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccesLayer.Concrete;
 using DataAccesLayer.EntityFramework;
 using EntittyLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -28,6 +25,8 @@ namespace MvcProjeKampi.Controllers
         public ActionResult AddAbout(About about)
         {
             am.AboutAdd(about);
+            
+           
             return RedirectToAction("Index");
         }
         public  PartialViewResult AboutPartial()

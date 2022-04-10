@@ -7,6 +7,8 @@
 
 <h1>Yeni Kategori Ekleme Sayfası</h1>
 <br />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 @using (Html.BeginForm("AddCategory", "AdminCategory", FormMethod.Post))
 {
 
@@ -19,6 +21,13 @@
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription)
         <br /> <br />
-        <button>Kaydet</button>
+        @*<button>Kaydet</button>*@
+        <button class="btn btn-info" id="btn3">Kaydet</button>
+
     </div>
 }
+<script>
+    $('#btn3').click(function () {
+        swal("Tebrikler", "Başarılı bir şekilde eklendi!", "success");
+    });
+</script>

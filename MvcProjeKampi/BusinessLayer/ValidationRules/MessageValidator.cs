@@ -12,6 +12,12 @@ namespace BusinessLayer.ValidationRules
     {
         public MessageValidator()
         {
+            RuleFor(x => x.RecevierMail)
+               .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").WithMessage("Geçerli bir e-posta değil")
+               .NotEmpty();
+            RuleFor(x => x.SenderMail)
+            .Matches(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$").WithMessage("Geçerli bir e-posta değil")
+            .NotEmpty();
             RuleFor(x => x.RecevierMail).NotEmpty().WithMessage("Alıcı adresini boş geçemezsiniz.");
             RuleFor(x => x.Subject).NotEmpty().WithMessage("Konuyu boş geçemezsiniz.");
             RuleFor(x => x.MessageContent).NotEmpty().WithMessage("Mesajı boş geçemezsiniz.");
