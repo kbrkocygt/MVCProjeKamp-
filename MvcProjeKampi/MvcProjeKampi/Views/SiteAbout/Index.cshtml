@@ -1,0 +1,20 @@
+﻿@model MvcProjeKampi.Models.ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout/BlogHome.cshtml";
+}
+
+
+<div class="content">
+    <div class="row">
+        <div>
+            @foreach (var item in Model.Abouts)
+            {
+                <img src="@item.AboutImage1" width="540px" height="540px" />
+                <p>@item.AboutDetails1</p>
+                <p>@item.AboutDetails2</p>
+            }
+
+        </div>
+    </div>
+</div>

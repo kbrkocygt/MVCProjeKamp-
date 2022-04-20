@@ -16,51 +16,54 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
-        public Message GetByID(int id)
-        {
-            return _messageDal.Get(x => x.MessageID==id);
-        }
-
-        public List<Message> GetListInbox(string p)
-        {
-            return _messageDal.List(x => x.RecevierMail == p); //alıcısı admin olanlar 
-        }
-
-        public List<Message> GetListSendbox(string p)
-        {
-            return _messageDal.List(x => x.SenderMail == p); //gönderen kişi admin olanlar
-        }
-
-        public void MessageAdd(Message message)
-        {
-            _messageDal.Insert(message);
-        }
-
-        public int MessageCount()
-        {
-          return  _messageDal.List().Count();
-        }
-        public int GetCountUnreadMessage(string p)
-        {
-            return _messageDal.List(x => !x.isRead && x.RecevierMail == p).Count;
-        }
-        public int GetCountUnreadSenderMessage(string p)
-        {
-            return _messageDal.List(x => !x.isRead && x.SenderMail == p).Count;
-        }
-        public void MessageDelete(Message message)
+        public void Delete(Message message)
         {
             _messageDal.Delete(message);
         }
 
-        public void MessageUpdate(Message message)
+        public List<Message> GetAllRead()
         {
-            throw new NotImplementedException();
+            return _messageDal.List(m => m.RecevierMail == "admin@gail.com").Where(m => m.isRead == false).ToList();
         }
 
-        public List<Message> GetInbox(string aranacak)
+        public Message GetById(int Id)
         {
-            return _messageDal.List(x => x.MessageContent.Contains(aranacak));
+            return _messageDal.Get(m => m.MessageID == Id);
+        }
+
+        public List<Message> GetMessageSendBox(string sender)
+        {
+            return _messageDal.List(m => m.SenderMail == sender);
+        }
+
+        public List<Message> GetMessageSendBox()
+        {
+            return _messageDal.List(m => m.SenderMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetMessagesInbox()
+        {
+            return _messageDal.List(m => m.RecevierMail == "admin@gmail.com");
+        }
+
+        public List<Message> GetMessagesInbox(string receiver)
+        {
+            return _messageDal.List(m => m.RecevierMail == receiver);
+        }
+
+        public void Insert(Message message)
+        {
+            _messageDal.Insert(message);
+        }
+
+        public List<Message> IsDraft()
+        {
+            return _messageDal.List(m => m.isDraft == true);
+        }
+
+        public void Update(Message message)
+        {
+            _messageDal.Update(message);
         }
     }
 }

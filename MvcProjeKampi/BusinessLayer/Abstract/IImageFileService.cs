@@ -11,5 +11,6 @@ namespace BusinessLayer.Abstract
 
     {
         List<ImageFile> GetList();
+        void Add(ImageFile imageFile);
     }
 }

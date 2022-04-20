@@ -10,5 +10,9 @@ namespace BusinessLayer.Abstract
     public interface ISkilService
     {
         List<Skil> GetSkils();
+        void SkilAdd(Skil skil);
+        Skil GetByID(int id);
+        void SkilDelete(Skil skil);
+        void SkilUpdate(Skil skil);
     }
 }

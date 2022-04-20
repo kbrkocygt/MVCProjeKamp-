@@ -17,8 +17,8 @@ namespace EntittyLayer.Concrete
         public string AboutDetails2 { get; set; }
         [StringLength(100)]
         public string AboutImage1 { get; set; }
-        [StringLength(100)]
-        public string AboutImage2 { get; set; }
+        //[StringLength(100)]
+        //public string AboutImage2 { get; set; }
 
     }
 }

@@ -4,24 +4,63 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
 
-<h2>Hakkında Veri Listesi</h2>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Hakkımda Başlığı</th>
-        <th>Aktif Yap</th>
-        <th>Pasif Yap</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.AboutID</td>
-            <td>Başlık</td>
-            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
-            <td></td>
-        </tr>
-    }
-</table>
-@Html.Action("AboutPartial", "About")
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">Hakkımda</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                   
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+
+                    <!-- start project list -->
+                    <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th style="width: 1%">#</th>
+                                <th style="width: 20%">Hakkımda Başlığı</th>
+                                <th>Aktif Yap</th>
+                                <th>Pasif Yap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.AboutID</td>
+                                    <td>Başlık</td>
+                                    <td><a href="#" class="btn btn-dark">Aktif Yap</a></td>
+                                    <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+                                    <td></td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- end project list -->
+                    @Html.Action("AboutPartial", "About")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

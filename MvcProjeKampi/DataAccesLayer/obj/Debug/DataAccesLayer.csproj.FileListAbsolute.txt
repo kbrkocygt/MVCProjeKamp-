@@ -48,3 +48,6 @@ C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAc
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_ısread_message.resources
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.mig_yetenek_stringlength.resources
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_saltwriter.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_content_ımage.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.add_aboutımagedelete.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Debug\DataAccesLayer.Migrations.addTrashMessage.resources

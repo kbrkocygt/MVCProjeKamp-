@@ -141,6 +141,18 @@
     <Compile Include="Migrations\202204081957131_add_saltwriter.designer.cs">
       <DependentUpon>202204081957131_add_saltwriter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204171622142_add_content_ımage.cs" />
+    <Compile Include="Migrations\202204171622142_add_content_ımage.designer.cs">
+      <DependentUpon>202204171622142_add_content_ımage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204172350562_add_aboutımagedelete.cs" />
+    <Compile Include="Migrations\202204172350562_add_aboutımagedelete.designer.cs">
+      <DependentUpon>202204172350562_add_aboutımagedelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204200911188_addTrashMessage.cs" />
+    <Compile Include="Migrations\202204200911188_addTrashMessage.designer.cs">
+      <DependentUpon>202204200911188_addTrashMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +214,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204081957131_add_saltwriter.resx">
       <DependentUpon>202204081957131_add_saltwriter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204171622142_add_content_ımage.resx">
+      <DependentUpon>202204171622142_add_content_ımage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204172350562_add_aboutımagedelete.resx">
+      <DependentUpon>202204172350562_add_aboutımagedelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204200911188_addTrashMessage.resx">
+      <DependentUpon>202204200911188_addTrashMessage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,12 +4,7 @@
     Layout = null;
 }
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,8 +15,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!--Custom Theme files-->
     <link href="/AdminLTE-3.0.4/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <!--//Custom Theme files -->
-    <!--web font-->
+    <link rel="icon" href="/AdminLTE-3.0.4/admin/production/images/pencilicon.png" type="image/ico" />
     <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <!--//web font-->
@@ -42,40 +36,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!--//ResponsiveTabs-->
 </head>
 <body>
-    <!-- main -->
-    <div class="main">
-        <h1>Yetenek Profili</h1>
-        <div class="main-info w3l">
-            <div class="main-row">
-                <!-- main-row-one -->
-                <div class="profile-grid logo wthree">
-                    <img src="~/AdminLTE-3.0.4/web/images/1647721908041.jpg" alt="" width="100" height="100">
-                    <h2>Kübra Koçyiğit</h2>
-                    <p>Kastamonu Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim.Şuanda bir firmada iş yeri eğitimi stajı yapıyorum.</p>
+   
+                        <div class="main">
+                            <h1>Yetenek Profili</h1>
+                            <div class="main-info w3l">
+                                <div class="main-row">
+                                    <!-- main-row-one -->
+                                    <div class="profile-grid logo wthree">
+                                        <img src="~/AdminLTE-3.0.4/web/images/1647721908041.jpg" alt="" width="100" height="100">
+                                        <h2>Kübra Koçyiğit</h2>
+                                        <p>Kastamonu Üniversitesi Bilgisayar Mühendisliği 4. sınıf öğrencisiyim.Şuanda bir firmada iş yeri eğitimi stajı yapıyorum.</p>
 
-                </div>
-                <h3 class="title">Yetenekler</h3>
-                <div class="col-md-6 skills-right bar_group">
-                    @foreach (var item in Model)
-                    {
-                        <div class='bar_group__bar thin' label='@item.Yetenek &nbsp;&nbsp; @item.YetenekBaşarı' value='200'></div>
-                    
-                    }
+                                    </div>
+                                    <h3 class="title">Yetenekler</h3>
+                                    <div class="col-md-6 skills-right bar_group">
 
-                </div>
-                <!--bar-js-->
-                <script src="/AdminLTE-3.0.4/web/js/bars.js"></script>
-                <div class="social-icons agileits">
-                    <ul>
-                     
-                        <li><a href="https://www.linkedin.com/in/k%C3%BCbra-ko%C3%A7yi%C4%9Fit-708286189/" class="be"></a></li>
-                        <li><a href="#" class="gg"></a></li>
-                    </ul>
-                </div>
-                <div class="clear"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- main -->
+                                        @foreach (var item in Model)
+                                        {
+                                            <div class='bar_group__bar thin' label='@item.Yetenek &nbsp;&nbsp; @item.YetenekBaşarı' value='200'></div>
+
+
+
+                                        }
+
+                                    </div>
+                                    <!--bar-js-->
+                                    <script src="/AdminLTE-3.0.4/web/js/bars.js"></script>
+                                    <div class="social-icons agileits">
+                                        <ul>
+
+                                            <li><a href="https://www.linkedin.com/in/k%C3%BCbra-ko%C3%A7yi%C4%9Fit-708286189/" class="be"></a></li>
+                                            <li><a href="#" class="gg"></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"> </div>
+                                    <div class="center">
+                                        <a  href="/Skil/SkilTable/" style="color:white">Düzenle</a>&nbsp;&nbsp;
+                                      
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+               
 </body>
 </html>

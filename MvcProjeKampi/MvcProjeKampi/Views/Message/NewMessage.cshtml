@@ -4,8 +4,6 @@
     ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -24,83 +22,89 @@
 
 </head>
 <body class="hold-transition sidebar-mini">
+    <div class="right_col" role="main">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <section class="content-header">
+                            <div class="container-fluid">
+                                <div class="row mb-2">
+                                    <div class="col-sm-6">
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Yeni Mesaj Sayfası</h1>
-                </div>
-
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                @Html.Action("MessageListPartial", "Message")
-
-                <!-- /.col -->
-                <div class="col-md-9">
-                    @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
-                    {
-                        <div class="card card-primary card-outline">
-                            <div class="card-header">
-                                <h3 class="card-title">Yeni Mesaj   Oluştur</h3>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <div class="form-group">
-                                    @Html.Label("Alıcı")
-                                    @Html.TextBoxFor(x => x.RecevierMail, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.RecevierMail, "", new { @style = "color:red" })
-                                </div>
-                                <div class="form-group">
-                                    @Html.Label("Konu")
-                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(x => x.Subject, "", new { @style = "color:red" })
-                                </div>
-                                <div class="form-group">
-
-                                    @Html.Label("Mesajınız")
-                                    <textarea id="compose-textarea" class="form-control" name="MessageContent" style="height: 300px">
-
-                                    </textarea>
-                                </div>
-                                <div class="form-group">
-                                    <div class="btn btn-default btn-file">
-                                        <i class="fas fa-paperclip"></i> Dosya Ekle
-                                        <input type="file" name="attachment">
                                     </div>
-                                    <p class="help-block">Max. 32MB</p>
+                                    <div class="col-sm-6">
+                                        <ol class="breadcrumb float-sm-right">
+                                            <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                            <li class="breadcrumb-item active">Yeni Mesaj</li>
+                                        </ol>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer">
-                                <div class="float-right">
-                                    <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Tasklaklara Kaydet</button>
-                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                            </div><!-- /.container-fluid -->
+                        </section>
+                        <section class="content">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        @Html.Action("MessageListPartial", "Message")
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-9">
+                                        @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+                                        {
+                                            <div class="card card-primary card-outline">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                                                </div>
+                                                <!-- /.card-header -->
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                        @Html.Label("Alıcı:")
+                                                        @Html.TextBoxFor(m => m.RecevierMail, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.RecevierMail, "", new { @class = "text-danger" })
+                                                    </div>
+                                                    <div class="form-group">
+                                                        @Html.Label("Konu:")
+                                                        @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+                                                        @Html.ValidationMessageFor(m => m.Subject, "", new { @class = "text-danger" })
+                                                    </div>
+                                                    <div class="form-group">
+                                                        @Html.Label("Mesaj:")
+                                                        @Html.TextAreaFor(m => m.MessageContent, new { @class = "form-control", id = "compose-textarea" })
+                                                        @Html.ValidationMessageFor(m => m.MessageContent, "", new { @class = "text-danger" })
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="btn btn-default btn-file">
+                                                            <i class="fa fa-paperclip"></i> Dosya Ekle
+                                                            <input type="file" name="attachment">
+                                                        </div>
+                                                        <p class="help-block">Max. 32MB</p>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card-body -->
+                                                <div class="card-footer">
+                                                    <div class="float-right">
+                                                        <button type="submit" formmethod="post" name="button" value="draft" class="btn btn-outline-primary"><i class="fas fa-pencil-alt"></i> Taslaklara Kaydet</button>
+                                                        <button type="submit" name="button" value="add" class="btn btn-success"><i class="fa fa-envelope"></i> Gönder</button>
+                                                    </div>
+                                                    <button type="submit" name="button" value="cancel" class="btn btn-default"><i class="fa fa-times"></i> İptal Et</button>
+                                                </div>
+                                                <!-- /.card-footer -->
+                                            </div>
+                                        }
+                                        <!-- /.card -->
+                                    </div>
+                                    <!-- /.col -->
                                 </div>
-                                <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal et</button>
-                            </div>
-                            <!-- /.card-footer -->
-                        </div>
-                        <!-- /.card -->
-                    }
+                                <!-- /.row -->
+                            </div><!-- /.container-fluid -->
+                        </section>
+                    </div>
                 </div>
-                <!-- /.col -->
             </div>
-            <!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    <!-- /.content-wrapper -->
-    <!-- Control Sidebar -->
-    <!-- /.control-sidebar -->
-    <!-- ./wrapper -->
-    <!-- jQuery -->
+        </div>
+    </div>
     <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -118,3 +122,8 @@
         })</script>
 </body>
 </html>
+
+
+
+
+

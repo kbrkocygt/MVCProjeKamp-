@@ -13,6 +13,7 @@ namespace EntittyLayer.Concrete
         public int ContentID { get; set; }
         [StringLength(1000)]
         public String ContentValue { get; set; }
+        public String ContentImage { get; set; }
 
         public DateTime ContentDate{ get; set; }
         public bool ContentStatus { get; set; }

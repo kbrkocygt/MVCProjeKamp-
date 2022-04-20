@@ -16,9 +16,30 @@ namespace BusinessLayer.Concrete
         {
             _skilDal = skilDal;
         }
+
+        public Skil GetByID(int id)
+        {
+            return _skilDal.Get(x => x.SkilID == id);
+        }
+
         public List<Skil> GetSkils()
         {
             return _skilDal.List();
+        }
+
+        public void SkilAdd(Skil skil)
+        {
+            _skilDal.Insert(skil);
+        }
+
+        public void SkilDelete(Skil skil)
+        {
+            _skilDal.Delete(skil);
+        }
+
+        public void SkilUpdate(Skil skil)
+        {
+            _skilDal.Update(skil);
         }
     }
 }

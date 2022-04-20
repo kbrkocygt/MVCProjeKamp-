@@ -1,0 +1,32 @@
+﻿@model MvcProjeKampi.Models.ViewModel
+@{
+    ViewBag.Title = "site";
+    Layout = "~/Views/Shared/Layout/BlogHome.cshtml";
+}
+
+@*<section class="section first-section">
+        <div class="container-fluid">
+            <div class="masonry-blog clearfix">
+                @foreach (var item in Model.Contents)
+                {
+                        <div class="left-side">
+                            <div class="masonry-box post-media">
+                                <img src="@item.ContentImage" alt="" class="img-fluid">
+                                <div class="shadoweffect">
+                                    <div class="shadow-desc">
+                                        <div class="blog-meta">
+                                            <span class="bg-aqua"><a href="blog-category-01.html" title="">Gardening</a></span>
+                                            <h4><a href="garden-single.html" title="">How to choose high quality soil for your gardens</a></h4>
+                                            <small><a href="garden-single.html" title="">21 July, 2017</a></small>
+                                            <small><a href="#" title="">by Amanda</a></small>
+                                        </div><!-- end meta -->
+                                    </div><!-- end shadow-desc -->
+                                </div><!-- end shadow -->
+                            </div><!-- end post-media -->
+                        </div><!-- end left-side -->
+                }
+            </div>
+        </div>
+    </section>*@
+
+@Html.Partial("/Views/Home/Content.cshtml")

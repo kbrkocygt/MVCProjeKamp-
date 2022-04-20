@@ -17,6 +17,11 @@ namespace BusinessLayer.Concrete
             _ımageFileDal = ımageFileDal;
         }
 
+        public void Add(ImageFile imageFile)
+        {
+            _ımageFileDal.Insert(imageFile);
+        }
+
         public List<ImageFile> GetList()
         {
             return _ımageFileDal.List();

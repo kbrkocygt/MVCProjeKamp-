@@ -14,115 +14,161 @@ namespace MvcProjeKampi.Controllers
 {
     public class MessageController : Controller
     {
-        Context c = new Context();
-        MessageManager mm = new MessageManager(new EfMessageDal());
-        MessageValidator mv = new MessageValidator();
-
+        ContactManager cm = new ContactManager(new EfContactDal());
+        MessageManager messageManager = new MessageManager(new EfMessageDal());
+        MessageValidator messageValidator = new MessageValidator();
         // GET: Message
-        [Authorize]
-        public ActionResult Inbox(string p ,string aranacak)
+        public ActionResult Inbox()
         {
-            //string adminUserName = (string)Session["AdminUserName"];
-            //ViewBag.unRead = mm.GetCountUnreadMessage(adminUserName);
-            //var mesage = mm.GetListInbox(p);
 
-            if (aranacak== null)
-            {
-                var value = mm.GetInbox(aranacak);
-                return View(value);
-            }
-            else
-            {
-                string adminUserName = (string)Session["AdminUserName"];
-                ViewBag.unRead = mm.GetCountUnreadMessage(adminUserName);
-                var mesage = mm.GetListInbox(p);
-                return View(mesage);
-            }
-
-
-          
-        }
-        public ActionResult Sendbox(string p)
-        {
-            var messagelist = mm.GetListSendbox(p);
-            return View(messagelist);
+            var MessageList = messageManager.GetMessagesInbox();
+            return View(MessageList);
         }
 
-        public ActionResult GetInboxMessageDetails(int id)
+        public ActionResult SendBox()
         {
-            var values = mm.GetByID(id);
-            if (values.isRead!=true)
-            {
-                values.isRead = true;
-                mm.MessageUpdate(values);
-            }
-            return View(values);
+
+            var result = messageManager.GetMessageSendBox();
+            return View(result);
         }
-        public ActionResult GetSendMessageDetails(int id)
+
+        public ActionResult GetMessageDetails(int id)
         {
-            var values = mm.GetByID(id);
-            return View(values);
+            var result = messageManager.GetById(id);
+            return View(result);
         }
-      
+
         [HttpGet]
         public ActionResult NewMessage()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewMessage(Message message, string button)
+        {
+            ValidationResult validationResult = messageValidator.Validate(message);
+            if (button == "add")
+            {
+                if (validationResult.IsValid)
+                {
+                    message.SenderMail = "admin@gmail.com";
+                    message.isDraft = false;
+                    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    messageManager.Insert(message);
+                    return RedirectToAction("Sendbox");
+                }
+                else
+                {
+                    foreach (var item in validationResult.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
+
+            else if (button == "draft")
+            {
+                if (validationResult.IsValid)
+                {
+
+                    message.SenderMail = "admin@gmail.com";
+                    message.isDraft = true;
+                    message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                    messageManager.Insert(message);
+                    return RedirectToAction("Draft");
+                }
+                else
+                {
+                    foreach (var item in validationResult.Errors)
+                    {
+                        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                    }
+                }
+            }
+            else if (button == "cancel")
+            {
+                return RedirectToAction("NewMessage");
+            }
 
             return View();
         }
-        [HttpPost]
-        public ActionResult NewMessage(Message message)
+
+        public ActionResult DeleteMessage(int id)
         {
-            ValidationResult results = mv.Validate(message);
-            if (results.IsValid)
+            var result = messageManager.GetById(id);
+            if (result.Trash == true)
             {
-                message.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-                mm.MessageAdd(message);
-                return RedirectToAction("Sendbox");
+                result.Trash = false;
             }
             else
             {
-                foreach (var item in results.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
+                result.Trash = true;
             }
-            return View();
-
-           
-        }
-        public ActionResult Draft(string p)
-        {
-            var sendList = mm.GetListSendbox(p);
-            var draftList = sendList.FindAll(x => x.isDraft == true);
-            return View(draftList);
-        }
-        public PartialViewResult MessageListPartial(string p)
-        {
-            //iLETİŞİM kısmındaki Toplam mesaj sayısı
-            var messageCount = c.Contacts.Count();
-            ViewBag.messageCountView = messageCount;
-
-
-            //alıcısı admın olan mesaj sayısı
-            var messageByReceiverCount = c.Messages.Count(x => x.RecevierMail == p);
-            ViewBag.messageCountReceiver = messageByReceiverCount;
-
-            //göndereni admin olan mesajsayısı
-            var messageBySender = c.Messages.Count(x => x.SenderMail == p);
-            ViewBag.messageCountSender = messageBySender;
-            return PartialView();
-        }
-       
-        public ActionResult DeleteMessage(int id)
-        {
-          id = 1013;
-            var messageyvalue = mm.GetByID(id);
-            mm.MessageDelete(messageyvalue);
+            messageManager.Delete(result);
             return RedirectToAction("Inbox");
 
-           
         }
-      
+
+        public ActionResult Draft()
+        {
+            var result = messageManager.IsDraft();
+            return View(result);
+        }
+
+        public ActionResult GetDraftDetails(int id)
+        {
+            var result = messageManager.GetById(id);
+            return View(result);
+        }
+
+        public ActionResult IsRead(int id)
+        {
+            var result = messageManager.GetById(id);
+            if (result.isRead == false)
+            {
+                result.isRead = true;
+            }
+            else
+            {
+                result.isRead = false;
+            }
+            messageManager.Update(result);
+            return RedirectToAction("Inbox");
+        }
+
+        public ActionResult MessageRead()
+        {
+            var result = messageManager.GetMessagesInbox().Where(m => m.isRead == true).ToList();
+            return View(result);
+        }
+
+        public ActionResult MessageUnRead()
+        {
+            var result = messageManager.GetAllRead();
+            return View(result);
+        }
+        public PartialViewResult MessageListPartial()
+        {
+            var contact = cm.GetList().Count();
+            ViewBag.contact = contact;
+
+            var sendMail = messageManager.GetMessageSendBox().Count();
+            ViewBag.sendMail = sendMail;
+
+            var receiverMail = messageManager.GetMessagesInbox().Count();
+            ViewBag.receiverMail = receiverMail;
+
+            var draftMail = messageManager.GetMessageSendBox().Where(m => m.isDraft == true).Count();
+            ViewBag.draftMail = draftMail;
+
+            var readMessage = messageManager.GetMessagesInbox().Where(m => m.isRead == true).Count();
+            ViewBag.readMessage = readMessage;
+
+            var unreadMessage = messageManager.GetAllRead().Count();
+            ViewBag.unreadMessage = unreadMessage;
+            return PartialView();
+        }
     }
+
 }

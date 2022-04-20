@@ -28,5 +28,6 @@ namespace EntittyLayer.Concrete
 
         public bool isDraft { get; set; }
         public bool isRead { get; set; }
+        public bool Trash { get; set; }
     }
 }

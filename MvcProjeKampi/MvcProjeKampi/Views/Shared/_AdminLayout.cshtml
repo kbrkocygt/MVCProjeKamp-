@@ -1,246 +1,247 @@
-﻿@{
+﻿
+
+@{
+    /**/
+
     Layout = null;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Web Site Yönetimi</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to to the body tag
-to get the desired effect
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            @*<a href="index3.html" class="brand-link">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                     style="opacity: .8">
-                <span class="brand-text font-weight-light">Admin Paneli</span>
-            </a>*@
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/profil.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Kübra Koçyiğit</a>
-                    </div>
-                </div>
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-    with font-awesome or any other icon font library -->
-                        @*@if (User.IsInRole("B"))
-        {*@
-                        <li class="nav-item">
-                            <a href="/AdminCategory/Index/" class="nav-link">
-                                <i class="nav-icon fas fa fa-list-alt"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
-                        @*}*@
+    <link rel="icon" href="/AdminLTE-3.0.4/admin/production/images/pencilicon.png" type="image/ico" />
 
-                        <li class="nav-item">
-                            <a href="/Heading/Index/" class="nav-link">
-                                <i class="nav-icon fas fa fa-circle"></i>
-                                <p>
-                                    Başlıklar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Content/GetAllContent/" class="nav-link">
-                                <i class="nav-icon fas fa fa-book-reader"></i>
-                                <p>
-                                    Yazılar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Writer/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Yazarlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-chart-pie"></i>
-                                <p>
-                                    Grafikler
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/Chart/Index/" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 1</p>
-                                    </a>
+    <title>MVC KAMPI</title>
+
+    <!-- Bootstrap -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- bootstrap-daterangepicker -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/AdminLTE-3.0.4/admin/build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-edit"></i> <span>YÖNETİM</span></a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- menu profile quick info -->
+                    <div class="profile clearfix">
+                        <div class="profile_pic">
+                            <img src="/AdminLTE-3.0.4/admin/production/images/img.jpg" alt="..." class="img-circle profile_img">
+                        </div>
+                        <div class="profile_info">
+                            <span>Hoşgeldin</span>
+                            <h2>John Doe</h2>
+                        </div>
+                    </div>
+                    <!-- /menu profile quick info -->
+
+                    <br />
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Genel</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a href="/AdminCategory/Home/"><i class="fa fa-home"></i> Anasayfa </a>
+
                                 </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 2</p>
-                                    </a>
+                                <li>
+                                    <a href="/Profile/AdminProfile/"><i class="fa fa-user"></i> Profil </a>
+
                                 </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Grafik 3</p>
-                                    </a>
+                                <li>
+                                    <a><i class="fa fa-edit"></i>Sayfalar <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/AdminCategory/Index/">Kategoriler</a></li>
+                                        <li><a href="/Heading/Index/">Başlıklar</a></li>
+                                        <li><a href="/Content/GetAllContent/">Yazılar</a></li>
+                                        <li><a href="/Writer/Index/">Yazarlar</a></li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Home/SweetAlert/"><i class="fa fa-text-height"></i>  Sweet Alert</a>
+
+                                </li>
+                                <li>
+                                    <a href="/About/Index/"><i class="fa fa-info"></i>  Hakkımda</a>
+
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-image"></i>Galeri<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>
+                                            <a href="/Gallery/Index/"><i class="fa fa-image"></i>Görseller</a>
+                                            <a href="/Gallery/ImageAdd/"><i class="fa fa-plus"></i>Görsel Ekle</a>
+
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Calendar/AdminCalendar/"><i class="fa fa-calendar"></i>Takvim</a>
+
+                                </li>
+                                <li>
+                                    <a href="/Authorization/Index/"><i class="fa fa-tasks"></i>Yetkilendirme</a>
+
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-bar-chart-o"></i> Grafikler <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Chart/Index/">Grafik 1</a></li>
+                                        <li><a href="/Chart/Chart2/">Grafik 2</a></li>
+                                        <li><a href="/Chart/Chart3/">Grafik 3</a></li>
+                                        <li><a href="#">ECharts</a></li>
+                                        <li><a href="/Istatistlikler/Index/">İstatistlik</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Skil/Index/"><i class="fa fa-gift"></i>Yetenek Kartım</a>
+
+                                </li>
+                                <li>
+                                    <a href="/Heading/HeadingReport/"><i class="fa fa-file"></i>Raporlama</a>
+
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/About/Index/" class="nav-link">
-                                <i class="nav-icon fas fa fa-indent"></i>
-                                <p>
-                                    Hakkımızda
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Heading/HeadingReport/" class="nav-link">
-                                <i class="nav-icon fas fa fa-bars"></i>
-                                <p>
-                                    Raporlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Contact/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    İletişim & Mesajlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Authorization/Index/" class="nav-link">
-                                <i class="nav-icon fa fa-user-secret"></i>
-                                <p>
-                                    Yetkilendirmeler
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Gallery/Index/" class="nav-link">
-                                <i class="nav-icon far fa-image"></i>
-                                <p>
-                                    Galeri
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Home/SweetAlert/" class="nav-link">
-                                <i class="nav-icon far fa fa-map"></i>
-                                <p>
-                                 Sweet Alert
+                        </div>
+                        <div class="menu_section">
+                            <h3>Live On</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a><i class="fa fa-inbox"></i> İletişim & Mesajlar <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/Message/Inbox/">Gelen Kutusu</a></li>
+                                        <li><a href="/Message/SendBox/">Gönderilen Mesajlar</a></li>
+                                        <li><a href="/Message/Draft/">Taslaklar</a></li>
+                                        <li><a href="/Message/DeleteMessage/">Çöp Kutusu</a></li>
 
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/ErrorPage/Page404/" class="nav-link">
-                                <i class="nav-icon far fa fa-exclamation-triangle"></i>
-                                <p>
-                                    Hata Sayfaları
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-bug"></i>Hata Sayfaları<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="/ErrorPage/Page404/">403 Error</a></li>
+                                        <li><a href="/ErrorPage/Page404/">404 Error</a></li>
+                                        <li><a href="#">500 Error</a></li>
 
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Istatistlikler/Index/" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    İstatistikler
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Skil/Index/" class="nav-link">
-                                <i class="far fa-check-square"></i>
-                                <p>
-                                    Yetenek Kartım
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Home/HomePage/" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Siteye Git
-                                </p>
-                            </a>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/Home/HomePage/"><i class="fa fa-sitemap"></i> Siteye Git</a>
 
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Login/LogOut/" class="nav-link">
-                                <i class="nav-icon fa fa-sign-out-alt"></i>
-                                <p>
-                                    Çıkış yap
-                                </p>
-                            </a>
+                                </li>
+                                <li>
+                                    <a href="/Login/Index/"><i class="fa fa-sign-out pull-left"></i> Çıkış Yap</a>
 
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- /sidebar menu -->
+                    <!-- /menu footer buttons -->
+                    <div class="sidebar-footer hidden-small">
+                        <a data-toggle="tooltip" data-placement="top" title="Settings">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Lock">
+                            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                        </a>
+                        <a data-toggle="tooltip" data-placement="top" title="Logout" href="/Login/LogOut/">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                    <!-- /menu footer buttons -->
+                </div>
             </div>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Main content -->
-            <div class="content">
-                @RenderBody()
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
+
+            <!-- top navigation -->
+
+            @{Html.RenderAction("HomeNotification", "Home");}
+            <!-- /top navigation -->
+            <!-- page content -->
+            @RenderBody()
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer>
+                <div class="pull-right">
+                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
         </div>
-        <!-- /.content-wrapper -->
     </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
+
     <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="/AdminLTE-3.0.4/admin/vendors/moment/min/moment.min.js"></script>
+    <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="/AdminLTE-3.0.4/admin/build/js/custom.min.js"></script>
+
 </body>
 </html>

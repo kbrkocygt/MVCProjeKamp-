@@ -32,19 +32,21 @@ namespace MvcProjeKampi.Controllers
         [HttpPost]
         public ActionResult Index(Admin admin)
         {
-           
+            var encodedResponse = Request.Form["g-Recaptcha-Response"];
+            var isCaptchaValid = ReCaptcha.Validate(encodedResponse);
             var adminUserInfo = am.GetAdmin(admin.AdminUserName, admin.AdminPassword);
           
-            if (adminUserInfo != null)
+            if (adminUserInfo != null && isCaptchaValid)
             {
                 //login işlemleri
                 FormsAuthentication.SetAuthCookie(adminUserInfo.AdminUserName, false);
                 Session["AdminUserName"] = adminUserInfo.AdminUserName;
-                return RedirectToAction("Index", "AdminCategory");
+                return RedirectToAction("Home", "AdminCategory");
 
             }
             else
             {
+                TempData["Message"] = "Lütfen güvenliği doğrulayınız.";
                 return RedirectToAction("Index");
             }
 

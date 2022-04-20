@@ -4,102 +4,234 @@
     Layout = null;
 }
 
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Web Site Yönetimi</title>
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+        <!-- IonIcons -->
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    </head>
+    <!--
+    BODY TAG OPTIONS:
+    =================
+    Apply one or more of the following classes to to the body tag
+    to get the desired effect
+    |---------------------------------------------------------|
+    |LAYOUT OPTIONS | sidebar-collapse                        |
+    |               | sidebar-mini                            |
+    |---------------------------------------------------------|
+    -->
+    <body class="hold-transition sidebar-mini">
+        <div class="wrapper">
+
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+                <div class="sidebar">
+
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="~/AdminLTE-3.0.4/dist/img/profil.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">Başlıklar</a>
+                        </div>
+                    </div>
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                            @foreach (var item in Model)
+                            {
+
+
+                                <li class="nav-item">
+                                    <a href="/Default/Headings/@item.HeadingID" class="nav-link">
+
+                                        <p>
+                                            @item.HeadingName (0)
+                                        </p>
+                                    </a>
+                                </li>
+
+                            }
+                        </ul>
+                    </nav>
+
+                </div>
+
+            </aside>
+
+            <div class="content-wrapper">
+
+                @Html.Action("Index", "Default")
+                <div class="content">
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+
+        <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+
+        <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+        <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+    </body>*@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Web Site Yönetimi</title>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
-    <!-- IonIcons -->
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="icon" href="~/AdminLTE-3.0.4/admin/production/images/favicon.ico" type="image/ico" />
+
+    <title>MVC KAMPI</title>
+
+    <!-- Bootstrap -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+
+    <!-- bootstrap-progressbar -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- bootstrap-daterangepicker -->
+    <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/AdminLTE-3.0.4/admin/build/css/custom.min.css" rel="stylesheet">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to to the body tag
-to get the desired effect
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            @*<a href="index3.html" class="brand-link">
-                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                         style="opacity: .8">
-                    <span class="text-center d-block" >Yazar Paneli</span>
-                </a>*@
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="~/AdminLTE-3.0.4/dist/img/profil.jpg" class="img-circle elevation-2" alt="User Image">
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="index.html" class="site_title"><i class="fa fa-edit"></i> <span>EkşiSözlük</span></a>
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Başlıklar</a>
+
+                    <div class="clearfix"></div>
+
+                    <br />
+
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>Başlıklar</h3>
+                            @foreach (var item in Model)
+                            {
+
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <a href="/Default/Headings/@item.HeadingID"><i class="fa fa-star"></i> @item.HeadingName (0)</a>
+
+                                    </li>
+
+                                </ul>
+                            }
+                        </div>
+
+
+                    </div>
+                    <!-- /sidebar menu -->
+
+                </div>
+            </div>
+            <div class="right_col" role="main">
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <section class="content-header">
+                                    <div class="container-fluid">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-6">
+
+                                            </div>
+                                            
+                                            @Html.Action("Index", "Default")
+                                          
+                                            
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-                        @foreach (var item in Model)
-                        {
-
-
-                            <li class="nav-item">
-                                <a href="/Default/Headings/@item.HeadingID" class="nav-link">
-
-                                    <p>
-                                      @item.HeadingName (0)
-                                    </p>
-                                </a>
-                            </li>
-                           
-                        }
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
             </div>
-            <!-- /.sidebar -->
-        </aside>
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Main content -->
-            @Html.Action("Index","Default")
-            <div class="content">
-
-                <!-- /.container-fluid -->
             </div>
-            <!-- /.content -->
         </div>
-        <!-- /.content-wrapper -->
-    </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
-    <!-- OPTIONAL SCRIPTS -->
-    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
-    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+            <!-- jQuery -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/jquery/dist/jquery.min.js"></script>
+            <!-- Bootstrap -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- FastClick -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/fastclick/lib/fastclick.js"></script>
+            <!-- NProgress -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/nprogress/nprogress.js"></script>
+            <!-- Chart.js -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/Chart.js/dist/Chart.min.js"></script>
+            <!-- gauge.js -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/gauge.js/dist/gauge.min.js"></script>
+            <!-- bootstrap-progressbar -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+            <!-- iCheck -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/iCheck/icheck.min.js"></script>
+            <!-- Skycons -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/skycons/skycons.js"></script>
+            <!-- Flot -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.pie.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.time.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.stack.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/Flot/jquery.flot.resize.js"></script>
+            <!-- Flot plugins -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/flot.curvedlines/curvedLines.js"></script>
+            <!-- DateJS -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/DateJS/build/date.js"></script>
+            <!-- JQVMap -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/jquery.vmap.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+            <!-- bootstrap-daterangepicker -->
+            <script src="/AdminLTE-3.0.4/admin/vendors/moment/min/moment.min.js"></script>
+            <script src="/AdminLTE-3.0.4/admin/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+            <!-- Custom Theme Scripts -->
+            <script src="/AdminLTE-3.0.4/admin/build/js/custom.min.js"></script>
+
 </body>
 </html>

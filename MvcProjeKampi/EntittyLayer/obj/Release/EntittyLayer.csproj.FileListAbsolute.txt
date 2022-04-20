@@ -1,0 +1,13 @@
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntittyLayer.dll.config
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntittyLayer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntittyLayer.pdb
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntityFramework.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\SimpleCrypto.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntityFramework.xml
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Release\EntittyLayer.csprojAssemblyReference.cache
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Release\EntittyLayer.csproj.CoreCompileInputs.cache
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Release\EntittyLayer.csproj.CopyComplete
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Release\EntittyLayer.dll
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\EntittyLayer\obj\Release\EntittyLayer.pdb

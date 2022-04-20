@@ -67,5 +67,9 @@ namespace MvcProjeKampi.Controllers
             cm.CategoryUpdate(p);
             return RedirectToAction("Index");
         }
+        public ActionResult Home()
+        {
+            return View();
+        }
     }
 }

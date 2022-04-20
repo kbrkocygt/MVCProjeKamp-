@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+@Html.Partial("~/Views/Shared/Layout/partial/Head.cshtml")
+
+
+<body>
+    <div id="wrapper">
+
+        <div class="topbar-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
+                        <div class="topsocial">
+                            <a href="https://www.linkedin.com/in/k%C3%BCbra-ko%C3%A7yi%C4%9Fit-708286189/" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.youtube.com/channel/UCBe85XIZdi0J2yOWFXAB1lw" data-toggle="tooltip" data-placement="bottom" title="Youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://tr.pinterest.com/kcygtkbra/" data-toggle="tooltip" data-placement="bottom" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://twitter.com/kbrkocygt" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Flickr"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/kubraninyazilimgunluguu/" data-toggle="tooltip" data-placement="bottom" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-google-plus"></i></a>
+                        </div><!-- end social -->
+                    </div><!-- end col -->
+                    <div class="col-lg-4 hidden-md-down">
+                    </div><!-- end col -->
+
+                </div><!-- end row -->
+            </div><!-- end header-logo -->
+
+        </div>
+
+
+        @Html.Partial("~/Views/Shared/Layout/partial/Header.cshtml")
+        <section class="section wb">
+            <div class="container">
+                <div class="row">
+                    @RenderBody()
+
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="sidebar">
+
+                            <!-- son gonderiler end widget -->
+                            @Html.Partial("/Views/Home/RecentPost.cshtml")
+                            <!-- end widget -->
+                            <!-- end widget -->
+                            @Html.Partial("/Views/Home/CategoryList.cshtml")
+                        </div><!-- end sidebar -->
+                    </div><!-- end col -->
+
+                </div>
+            </div>
+        </section>
+
+                    @Html.Partial("~/Views/Shared/Layout/partial/Footer.cshtml")
+                    @Html.Partial("~/Views/Shared/Layout/partial/Script.cshtml")
+                </div>
+</body>
+</html>

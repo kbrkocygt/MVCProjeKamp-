@@ -1,76 +1,87 @@
-﻿@using EntittyLayer.Concrete
-@model List<Writer> 
-<html lang="en">
-<head>
-    <title>Sözlük Yazar Girişi</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+﻿
 
-    <link rel="stylesheet" href="/AdminLTE-3.0.4/login-form-20/css/style.css">
-</head>
-<body class="img js-fullheight" style="background-image: url(/AdminLTE-3.0.4/login-form-20/images/bg.jpg);">
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center mb-5">
-                    <h2 class="heading-section">Sözlük Yazar Girişi</h2>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4">
-                    <div class="login-wrap p-0">
-                        <h3 class="mb-4 text-center">Bir hesabın var mı?</h3>
+
+@using EntittyLayer.Concrete
+@model List<Writer>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Login </title>
+        <link rel="icon" href="/AdminLTE-3.0.4/admin/production/images/pencilicon.png" type="image/ico" />
+        <!-- Bootstrap -->
+        <link href="/AdminLTE-3.0.4/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="/AdminLTE-3.0.4/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="/AdminLTE-3.0.4/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- Animate.css -->
+        <link href="/AdminLTE-3.0.4/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
+
+        <!-- Custom Theme Style -->
+        <link href="/AdminLTE-3.0.4/admin/build/css/custom.min.css" rel="stylesheet">
+    </head>
+
+    <body class="login">
+        <div>
+            <a class="hiddenanchor" id="signup"></a>
+            <a class="hiddenanchor" id="signin"></a>
+
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
                         @using (Html.BeginForm("WriterLogin", "Login", FormMethod.Post))
                         {
+                            <form>
+                                <div>
+                                    <h1><i class="fa fa-user"></i>Yazar Girişi</h1>
 
-
-                            <div class="form-group">
-                            
-                                <input type="text" name="WriterMail" class="form-control" placeholder="Mail Adresin" required>
-                            </div>
-                            <div class="form-group">
-                                <input id="password-field" type="Password" name="WriterPassword" class="form-control" placeholder="*****" required>
-                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                            </div>
-                            <div class="form-group">
-                                <div class="g-recaptcha" data-sitekey="6LfOMUQfAAAAABh8R9mdFsrPbVan8ruqe8mNs94Q"></div>
-                                <span style="color:red InfoText">@TempData["Message"] </span>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control" name="WriterMail" placeholder="KullanıcıAdı" required="" />
+                                </div>
+                                <div>
+                                    <input type="password" class="form-control" placeholder="Parola" name="WriterPassword" required="" />
+                                </div>
                                 <br />
-                                <button type="submit" id="btnGonder" class="form-control btn btn-primary submit px-3">Giriş Yap</button>
+                                <div>
+                                    <div class="g-recaptcha center" data-sitekey="6LfOMUQfAAAAABh8R9mdFsrPbVan8ruqe8mNs94Q"></div>
+                                    <span style="color:red InfoText">@TempData["Message"] </span>
+                                    <br />
+                                    <br />
+                                    <button type="submit" id="btnGonder" class="form-control btn btn-dark submit px-3">Giriş Yap</button>
+
+                                    <a class="reset_pass" href="#">Şifremi Unuttum?</a>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+                                <div class="separator">
+                                    <p class="change_link">
+
+                                        <a href="#signup" class="to_register"> Yeni Hesap </a>
+                                    </p>
+
+                                    <div class="clearfix"></div>
+                                    <br />
 
 
-                            </div>
-                            <div class="form-group d-md-flex">
-                                <div class="w-50">
-                                    <label class="checkbox-wrap checkbox-primary">
-                                        Beni hatırla
-                                        <input type="checkbox" checked>
-                                        <span class="checkmark"></span>
-                                    </label>
                                 </div>
-                                <div class="w-50 text-md-right">
-                                    <a href="#" style="color: #fff">Şifremi Unuttum?</a>
-                                </div>
-                            </div>
+                            </form>
                         }
-
-                        <p class="w-100 text-center">&mdash; Veya sosyal medya ile giriş yap&mdash;</p>
-                        <div class="social d-flex text-center">
-                            <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
-                            <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
-                        </div>
-                    </div>
+                    </section>
                 </div>
+
+
             </div>
         </div>
-    </section>
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="/AdminLTE-3.0.4/login-form-20/js/jquery.min.js"></script>
-    <script src="/AdminLTE-3.0.4/login-form-20/js/popper.js"></script>
-    <script src="/AdminLTE-3.0.4/login-form-20/js/bootstrap.min.js"></script>
-    <script src="/AdminLTE-3.0.4/login-form-20/js/main.js"></script>
-</body>
-</html>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </body>
+   
+    </html>
