@@ -4,7 +4,7 @@ using DataAccesLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using PagedList;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -18,11 +18,11 @@ namespace MvcProjeKampi.Controllers
         {
             return View();
         }
-        public ActionResult GetAllContent(string p)
+        public ActionResult GetAllContent(string p,int page=1)
         {
             if(p==null)
             {
-                var value = cm.GetList();
+                var value = cm.GetList().ToPagedList(page,6);
                 return View(value);
             }
             else

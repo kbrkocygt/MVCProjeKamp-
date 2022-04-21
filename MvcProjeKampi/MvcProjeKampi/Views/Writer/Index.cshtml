@@ -1,6 +1,7 @@
 ﻿@using EntittyLayer.Concrete
-@model List<Writer>
-
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Writer>
 @{
     /**/
 
@@ -11,7 +12,7 @@
 <body class="nav-md">
     <div class="container body">
         <div class="main_container">
-      
+
             <!-- page content -->
             <div class="right_col" role="main">
                 <div class="">
@@ -100,12 +101,19 @@
                         </div>
                     </div>
                 </div>
+                @Html.PagedListPager((IPagedList)Model , p=>Url.Action("Index", new { p}),new PagedListRenderOptions
+{
+LiElementClasses=new List<string>
+{ "page-link"}
+})            
+                <a href="/Writer/AddWriter/" class="btn btn-outline-primary">Yazar Ekle</a>
             </div>
+
             <!-- /page content -->
             <!-- footer content -->
-           
+
         </div>
     </div>
 
-  
+
 </body>

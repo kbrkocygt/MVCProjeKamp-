@@ -11,7 +11,7 @@ namespace EntittyLayer.Concrete
     {
         [Key]
         public int ContentID { get; set; }
-        [StringLength(1000)]
+        [StringLength(10000)]
         public String ContentValue { get; set; }
         public String ContentImage { get; set; }
 

@@ -1,5 +1,7 @@
 ﻿@using EntittyLayer.Concrete
-@model List<Content>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Content>
 @{
     ViewBag.Title = "GetAllContent";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -40,6 +42,11 @@
                         <p>@item.ContentValue</p>
                     }
                 </div>
+                @Html.PagedListPager((IPagedList)Model , page=>Url.Action("GetAllContent", new { page}),new PagedListRenderOptions
+     {
+     LiElementClasses=new List<string>
+     { "page-link"}
+     })
             </div>
         </div>
     </div>

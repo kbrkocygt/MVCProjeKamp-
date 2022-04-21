@@ -1,5 +1,7 @@
 ﻿@using EntittyLayer.Concrete
-@model List<Heading>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Heading>
 
 @{
     ViewBag.Title = "Index";
@@ -87,7 +89,7 @@
                                             <li class="list-inline-item">
                                                 <img src="/AdminLTE-3.0.4/admin/production/images/user.png" class="avatar" alt="Avatar">
                                                 @*<img alt="Avatar" class="table-avatar" src="@item.Writer.WriterImage">
-                                    </li>*@
+                                                    </li>*@
                                         </ul>
                                     </td>
                                     <td>
@@ -121,10 +123,18 @@
                             }
                         </tbody>
                     </table>
+
+
+                    @Html.PagedListPager((IPagedList)Model , p=>Url.Action("Index", new { p}),new PagedListRenderOptions
+{
+LiElementClasses=new List<string>
+{ "page-link"}
+})
+
                     <!-- end project list -->
                     <a href="/Heading/AddHeading/" class="btn btn-dark"> Yeni Başlık Ekle</a>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+</div>

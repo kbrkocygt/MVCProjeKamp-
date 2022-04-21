@@ -5,6 +5,7 @@ using DataAccesLayer.EntityFramework;
 using EntittyLayer.Concrete;
 using FluentValidation.Results;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -15,9 +16,9 @@ namespace MvcProjeKampi.Controllers
         Context c = new Context();
         WriterValidator validationRules = new WriterValidator();
         // GET: Writer
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
-            var writerValues = wm.GetList();
+            var writerValues = wm.GetList().ToPagedList(p,6);
 
             return View(writerValues);
         }

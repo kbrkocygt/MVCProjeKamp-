@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -16,9 +17,9 @@ namespace MvcProjeKampi.Controllers
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
      
         [Authorize(Roles= "A")]
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
-            var categoryvalues = cm.GetList();
+            var categoryvalues = cm.GetList().ToPagedList(p,5);
             return View(categoryvalues);
         }
 

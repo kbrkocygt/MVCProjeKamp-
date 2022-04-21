@@ -153,6 +153,10 @@
     <Compile Include="Migrations\202204200911188_addTrashMessage.designer.cs">
       <DependentUpon>202204200911188_addTrashMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204212014061_addContentValuesLenght.cs" />
+    <Compile Include="Migrations\202204212014061_addContentValuesLenght.designer.cs">
+      <DependentUpon>202204212014061_addContentValuesLenght.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204200911188_addTrashMessage.resx">
       <DependentUpon>202204200911188_addTrashMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204212014061_addContentValuesLenght.resx">
+      <DependentUpon>202204212014061_addContentValuesLenght.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

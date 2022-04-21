@@ -4,7 +4,7 @@ using EntittyLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using PagedList;
 using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
@@ -15,9 +15,9 @@ namespace MvcProjeKampi.Controllers
         HeadingManager hm = new HeadingManager(new EfHeadingDal());
         CategoryManager cm = new CategoryManager(new EfCategoryDal());
         WriterManager wm = new WriterManager(new EfWriterDal());
-        public ActionResult Index()
+        public ActionResult Index(int p=1)
         {
-            var headingValues = hm.GetList();
+            var headingValues = hm.GetList().ToPagedList(p,4);
             return View(headingValues);
         }
         public ActionResult HeadingReport()

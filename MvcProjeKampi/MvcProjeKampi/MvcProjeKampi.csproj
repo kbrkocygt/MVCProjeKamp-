@@ -5015,7 +5015,6 @@
     <Compile Include="Controllers\IstatistliklerController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\SkilController.cs" />
     <Compile Include="Controllers\User\SiteAboutController.cs" />
     <Compile Include="Controllers\User\SiteCategoryController.cs" />
@@ -8685,7 +8684,6 @@
     <Content Include="Views\AdminCategory\Home.cshtml" />
     <Content Include="Views\ErrorPage\Page403.cshtml" />
     <Content Include="Views\Home\HomeNotification.cshtml" />
-    <Content Include="Views\Profile\AdminProfile.cshtml" />
     <Content Include="Views\Calendar\AdminCalendar.cshtml" />
     <Content Include="Views\Chart\Chart2.cshtml" />
     <Content Include="Views\Chart\Chart3.cshtml" />
@@ -8697,6 +8695,7 @@
     <Content Include="Views\WriterPanelMessage\MessagePartial.cshtml" />
     <Content Include="Views\WriterPanelMessage\WriterSendBox.cshtml" />
     <Content Include="Views\Gallery\ImageAdd.cshtml" />
+    <Content Include="Views\WriterPanel\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE-3.0.4\admin1\sleek-dashboard\.git\objects\info\" />

@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -21,7 +22,10 @@ namespace MvcProjeKampi.Controllers
         WriterManager wm = new WriterManager(new EfWriterDal());
         WriterValidator validationRules = new WriterValidator();
         Context c = new Context();
-
+        public ActionResult Home()
+        {
+            return View();
+        }
         public ActionResult WriterProfile(string p)
         {
             //id = 4;
@@ -60,14 +64,14 @@ namespace MvcProjeKampi.Controllers
             return View();
         }
 
-        public ActionResult MyHeading(string p)
+        public ActionResult MyHeading(string p , int page=1)
         {
 
             //id = 4;
             p = (string)Session["WriterMail"];
             var writerIdInfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
 
-            var values = hm.GetListByWriter(writerIdInfo);
+            var values = hm.GetListByWriter(writerIdInfo).ToPagedList(page,6);
             return View(values);
         }
         [HttpGet]

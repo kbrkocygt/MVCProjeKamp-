@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace MvcProjeKampi.Controllers
 {
@@ -16,13 +17,13 @@ namespace MvcProjeKampi.Controllers
         ContentManager cm = new ContentManager(new EfContentDal());
         Context c = new Context();
 
-        public ActionResult MyContent(string p)
+        public ActionResult MyContent(string p , int page=1)
         {
           
             p = (string)Session["WriterMail"];
             var writerIdInfo = c.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
 
-            var contentValues = cm.GetListByWriter(writerIdInfo);
+            var contentValues = cm.GetListByWriter(writerIdInfo).ToPagedList(page,4);
             return View(contentValues);
         }
         [HttpGet]
