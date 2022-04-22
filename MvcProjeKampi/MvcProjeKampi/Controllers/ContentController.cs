@@ -28,7 +28,7 @@ namespace MvcProjeKampi.Controllers
             else
             {
                 var valuess = cm.GetList(p);
-                return View(valuess.ToList());
+                return View(valuess.ToPagedList(page, 6));
             }
                 
         }

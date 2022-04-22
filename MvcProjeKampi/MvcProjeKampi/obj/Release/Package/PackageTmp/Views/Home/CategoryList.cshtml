@@ -1,0 +1,14 @@
+﻿@model MvcProjeKampi.Models.ViewModel
+<div class="widget">
+    <h2 class="widget-title">Kategoriler</h2>
+    <div class="link-widget">
+        <ul>
+            @foreach (var item in Model.Contents)
+            {
+                <li><a href="/Home/ContentDetails/@item.HeadingID">@item.Heading.Category.CategoryName <span>()</span></a></li>
+            }
+
+
+        </ul>
+    </div>
+</div>

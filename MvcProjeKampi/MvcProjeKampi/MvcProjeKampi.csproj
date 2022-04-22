@@ -8596,6 +8596,9 @@
     <Content Include="AdminLTE-3.0.4\admin1\sleek-dashboard\src\assets\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.0.4\admin1\sleek-dashboard\src\manifest.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -1,78 +1,119 @@
 ﻿@using EntittyLayer.Concrete
-@model List<Writer>
-
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Writer>
 @{
-                /**/
+    /**/
 
-                ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
 
-<body class="hold-transition sidebar-mini">
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Yazarlar Listesi</h1>
-                </div>
+                    <div class="clearfix"></div>
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
 
-            </div>
-        </div><!-- /.container-fluid -->
-    </section>
-    <!-- Main content -->
-    <section class="content">
-        <!-- Default box -->
-        <div class="card card-solid">
-            <div class="card-body pb-0">
-                <div class="row d-flex align-items-stretch">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-                            <div class="card bg-light">
-                                <div class="card-header text-muted border-bottom-0">
-                                    @item.WriterTitle
                                 </div>
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-7">
-                                            <h2 class="lead"><b>@item.WriterName  @item.WriterSurname</b></h2>
-                                            <p class="text-muted text-sm"><b>Hakkında: </b> @item.WriterAbout.</p>
-                                            <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> @item.WriterMail</li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-5 text-center">
-                                            <img src="@item.WriterImage" alt="" class="img-circle img-fluid" @*width="85px" height="85px"*@>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="text-right">
-                                        <a href="#" class="btn btn-sm bg-teal">
-                                            <i class="fas fa-comments">Yazarın Başlıkları</i>
-                                        </a>
-                                        <a href="/Writer/EditWriter/@item.WriterID" class="btn btn-sm btn-primary">
-                                            <i class="fas fa-user"></i>Profili Düzenle
-                                        </a>
-                                    </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">Yazarlar</li>
+                                    </ol>
                                 </div>
                             </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                    <div class="row">
+                        <div class="x_panel">
+                            <div class="x_content">
+                                <div class="col-md-12 col-sm-12  text-center">
+                                    <ul class="pagination pagination-split">
+                                        <li><a href="#">A</a></li>
+                                        <li><a href="#">B</a></li>
+                                        <li><a href="#">C</a></li>
+                                        <li><a href="#">D</a></li>
+                                        <li><a href="#">E</a></li>
+                                        <li>...</li>
+                                        <li><a href="#">W</a></li>
+                                        <li><a href="#">X</a></li>
+                                        <li><a href="#">Y</a></li>
+                                        <li><a href="#">Z</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="clearfix"></div>
+                                @foreach (var item in Model)
+                                {
+                                    <div class="col-md-4 col-sm-4  profile_details">
+                                        <div class="well profile_view">
+
+                                            <div class="col-sm-12">
+
+                                                <div class="left col-md-7 col-sm-7">
+                                                    <h2>@item.WriterName @item.WriterSurname</h2>
+                                                    <p><strong>Hakkında: </strong> @item.WriterAbout. </p>
+                                                    <ul class="list-unstyled">
+                                                        <li><i class="fa fa-building"></i> Address: </li>
+                                                        <li><i class="fa fa-phone"></i> Phone #: </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="right col-md-5 col-sm-5 text-center">
+                                                    <img src="/AdminLTE-3.0.4/admin/production/images/img.jpg" alt="" class="img-circle img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class=" profile-bottom text-center">
+                                                <div class=" col-sm-6 emphasis">
+                                                    <p class="ratings">
+                                                        <a>4.0</a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star"></span></a>
+                                                        <a href="#"><span class="fa fa-star-o"></span></a>
+                                                    </p>
+                                                </div>
+                                                <div class=" col-sm-6 emphasis">
+                                                    <a href="#" class="btn btn-sm btn-warning">
+                                                        Yazarın Başlıkları
+                                                    </a>
+                                                    <a href="/Writer/EditWriter/@item.WriterID" class="btn btn-sm btn-primary">
+                                                        Profili Düzenle
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                }
+                            </div>
+
                         </div>
-                    }
-
-
+                    </div>
                 </div>
+                @Html.PagedListPager((IPagedList)Model , p=>Url.Action("Index", new { p}),new PagedListRenderOptions
+{
+LiElementClasses=new List<string>
+{ "page-link"}
+})            
+                <a href="/Writer/AddWriter/" class="btn btn-outline-primary">Yazar Ekle</a>
             </div>
 
-        </div>
+            <!-- /page content -->
+            <!-- footer content -->
 
-    </section>
+        </div>
+    </div>
+
 
 </body>
-</html>

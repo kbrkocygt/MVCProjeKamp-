@@ -1,0 +1,49 @@
+﻿@model EntittyLayer.Concrete.ImageFile
+@{
+    ViewBag.Title = "ImageAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                        <li class="breadcrumb-item active">Fotoğraf Ekle</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section><br />
+                    @using (Html.BeginForm("ImageAdd", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group">
+                            @Html.Label("Açıklamayı Yazınız")
+                            @Html.TextBoxFor(x => x.ImageName, new { @class = "form-control" })
+
+                            <br /><br />
+                            @Html.Label("Fotoğraf")
+                            <br />
+                            <input type="file" name="ImagePath" />
+                            <br /><br />
+
+                            <button class="btn btn-success">Fotoğraf Ekle</button>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

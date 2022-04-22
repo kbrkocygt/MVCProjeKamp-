@@ -5,71 +5,245 @@
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 <!DOCTYPE html>
-    <html>
+        <html>
 
-    <body class="hold-transition sidebar-mini">
+        <body class="hold-transition sidebar-mini">
+            <div class="right_col" role="main">
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <section class="content-header">
+                                    <div class="container-fluid">
+                                        <div class="row mb-2">
+                                            <div class="col-sm-6">
 
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Yazarlar Listesi</h1>
-                    </div>
-
-                </div>
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- Main content -->
-        <section class="content">
-            <!-- Default box -->
-            <div class="card card-solid">
-                <div class="card-body pb-0">
-                    <div class="row d-flex align-items-stretch">
-                        @foreach (var item in Model)
-                        {
-                            <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
-                                <div class="card bg-light">
-                                    <div class="card-header text-muted border-bottom-0">
-                                        @item.WriterTitle
-                                    </div>
-                                    <div class="card-body pt-0">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h2 class="lead"><b>@item.WriterName  @item.WriterSurname</b></h2>
-                                                <p class="text-muted text-sm"><b>Hakkında: </b> @item.WriterAbout.</p>
-                                                <ul class="ml-4 mb-0 fa-ul text-muted">
-                                                    <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> @item.WriterMail</li>
-
-                                                </ul>
                                             </div>
-                                            <div class="col-5 text-center">
-                                                <img src="/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                            <div class="col-sm-6">
+                                                <ol class="breadcrumb float-sm-right">
+                                                    <li class="breadcrumb-item"><a href="/WriterPanel/Home/">Home</a></li>
+                                                    <li class="breadcrumb-item active">Profilim</li>
+                                                </ol>
                                             </div>
                                         </div>
+                                    </div><!-- /.container-fluid -->
+                                </section>
+                                <section class="content">
+                                    <!-- Default box -->
+                                    <div class="card card-solid">
+                                        <div class="card-body pb-0">
+                                            <div class="row d-flex align-items-stretch">
+                                                @foreach (var item in Model)
+                                                {
+                                                    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                                        <div class="card bg-light">
+                                                            <div class="card-header text-muted border-bottom-0">
+                                                                @item.WriterTitle
+                                                            </div>
+                                                            <div class="card-body pt-0">
+                                                                <div class="row">
+                                                                    <div class="col-7">
+                                                                        <h2 class="lead"><b>@item.WriterName  @item.WriterSurname</b></h2>
+                                                                        <p class="text-muted text-sm"><br /><br /><b>Hakkında: </b> @item.WriterAbout.</p>
+                                                                        <br />
+                                                                        <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                                            <li class="small"><span class="fa-li"><i class="fa fa-envelope"></i></span> @item.WriterMail</li>
+
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-5 text-center">
+                                                                        <img src="/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="card-footer">
+                                                                <div class="text-right">
+                                                                    <a href="#" class="btn btn-sm bg-teal">
+                                                                        <i class="fa fa-comments">Yazarın Başlıkları</i>
+                                                                    </a>
+                                                                    <a href="/WriterPanel/EditProfile/@item.WriterID" class="btn btn-sm bg-teal">
+                                                                        <i class="fa fa-user"></i>Profili Düzenle
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+
+
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="text-right">
-                                            <a href="#" class="btn btn-sm bg-teal">
-                                                <i class="fas fa-comments">Yazarın Başlıkları</i>
-                                            </a>
-                                            <a href="/WriterPanel/EditProfile/@item.WriterID" class="btn btn-sm btn-primary">
-                                                <i class="fas fa-user"></i>Profili Düzenle
-                                            </a>
+
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+    </body>
+        </html>
+
+@*<body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
+    <div class="wrapper">
+        <div class="right_col" role="main">
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <section class="content-header">
+                                <div class="container-fluid">
+                                    <div class="row mb-2">
+                                        <div class="col-sm-6">
+
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ol class="breadcrumb float-sm-right">
+                                                <li class="breadcrumb-item"><a href="/WriterPanel/Home/">Home</a></li>
+                                                <li class="breadcrumb-item active">Profilim</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="page-wrapper">
+                            <div class="content-wrapper">
+                                <div class="content">
+                                    <div class="bg-white border rounded">
+                                        <div class="row no-gutters">
+                                            <div class="col-lg-4 col-xl-3">
+                                                <div class="profile-content-left profile-left-spacing pt-5 pb-3 px-3 px-xl-5">
+
+                                                    @foreach (var item in Model)
+                                                    {
+                                                        <div class="card text-center widget-profile px-0 border-0">
+                                                            <div class="card-img mx-auto rounded-circle">
+                                                                <img src="/AdminLTE-3.0.4/admin/production/images/img.jpg" alt="user image">
+                                                            </div>
+
+                                                            <div class="card-body">
+                                                                <h4 class="py-2 text-dark">isim</h4>
+                                                                <p>@item.WriterMail</p>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                        <hr class="w-100">
+
+
+                                                    }
+                                                    <div class="contact-info pt-4">
+                                                        <h5 class="text-dark mb-1">Contact Information</h5>
+                                                        <p class="text-dark font-weight-medium pt-4 mb-2">Mail Adres</p>
+                                                        <p>example@gmail.com</p>
+                                                     
+                                                        <p class="text-dark font-weight-medium pt-4 mb-2">Sosyal Medya</p>
+                                                        <p class="pb-3 social-button">
+                                                            <a href="#" class="mb-1 btn btn-outline btn-twitter rounded-circle">
+                                                                <i class="mdi mdi-twitter"></i>
+                                                            </a>
+
+                                                            <a href="#" class="mb-1 btn btn-outline btn-linkedin rounded-circle">
+                                                                <i class="mdi mdi-linkedin"></i>
+                                                            </a>
+
+                                                            <a href="#" class="mb-1 btn btn-outline btn-facebook rounded-circle">
+                                                                <i class="mdi mdi-facebook"></i>
+                                                            </a>
+
+                                                            <a href="#" class="mb-1 btn btn-outline btn-skype rounded-circle">
+                                                                <i class="mdi mdi-skype"></i>
+                                                            </a>
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-8 col-xl-9">
+                                                <div class="profile-content-right profile-right-spacing py-5">
+                                                    <ul class="nav nav-tabs px-3 px-xl-5 nav-style-border" id="myTab" role="tablist">
+
+
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="/Profile/AdminProfile/" role="tab" aria-controls="profile" aria-selected="false">Profil</a>
+                                                        </li>
+
+
+                                                    </ul>
+                                                    <div class="tab-content px-3 px-xl-5" id="myTabContent">
+                                                        <div class="tab-pane fade" id="timeline" role="tabpanel" aria-labelledby="timeline-tab">
+                                                            <div class="media mt-5 profile-timeline-media timeline-media-spacing">
+                                                                <div class="align-self-start iconbox-45 overflow-hidden mr-3">
+                                                                    <img src="assets/img/user/u3.jpg" alt="Generic placeholder image">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade show active" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                                                            <div class="tab-pane-content mt-5">
+                                                                <form>
+                                                                    @foreach (var item in Model)
+                                                                    {
+                                                                        
+
+                                                                        <div class="row mb-2">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label for="firstName">Adınız</label>
+                                                                                    <input type="text" class="form-control" id="firstName" value="@item.WriterName">
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label for="lastName">Soyadınız</label>
+                                                                                    <input type="text" class="form-control" id="lastName" value="@item.WriterSurname">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                        <div class="form-group mb-4">
+                                                                            <label for="email">Email</label>
+                                                                            <input type="email" class="form-control" id="email" value="@item.WriterMail">
+                                                                        </div>
+
+                                                                        <div class="form-group mb-4">
+                                                                            <label for="oldPassword">Parola</label>
+                                                                            <input type="text" class="form-control" id="" value="@item.WriterPassword">
+                                                                        </div>
+
+
+                                                                    
+                                                                        <div class="d-flex justify-content-end mt-5">
+                                                                            <button type="submit" class="btn btn-primary mb-2 btn-pill">Güncelle</button>
+                                                                        </div>
+                                                                    }
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        }
-
-
+                        </div>
                     </div>
+
                 </div>
-
             </div>
-
-        </section>
-
-    </body>
-    </html>
-
+        </div>
+    </div>
+</body>*@

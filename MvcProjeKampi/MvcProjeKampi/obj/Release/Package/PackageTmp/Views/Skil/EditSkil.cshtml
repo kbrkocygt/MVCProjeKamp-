@@ -1,0 +1,51 @@
+﻿@model EntittyLayer.Concrete.Skil
+
+@{
+    ViewBag.Title = "EditSkil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
+
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">Kategori Güncelleme</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                    @using (Html.BeginForm("EditSkil", "Skil", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            @Html.Label("Yetnek ID :")
+                            @Html.TextBoxFor(x => x.SkilID, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Yetenek Adı :")
+                            @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Yetenek Başarı :")
+                            @Html.TextAreaFor(x => x.YetenekBaşarı, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-success">Güncelle</button>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

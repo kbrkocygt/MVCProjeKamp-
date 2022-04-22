@@ -31,3 +31,7 @@ C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAc
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.csproj.CopyComplete
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.dll
 C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.pdb
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.Migrations.add_content_ımage.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.Migrations.add_aboutımagedelete.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.Migrations.addTrashMessage.resources
+C:\Users\kubra\Documents\github\MVCProjeKamp-\MvcProjeKampi\MvcProjeKampi\DataAccesLayer\obj\Release\DataAccesLayer.Migrations.addContentValuesLenght.resources

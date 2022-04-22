@@ -1,32 +1,58 @@
 ﻿@model EntittyLayer.Concrete.Heading
 @{
-    ViewBag.Title = "EditHeading";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+                /**/
+
+                ViewBag.Title = "EditHeading";
+                Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
 
-<h2>Başlık Güncelleme Sayfası</h2>
-@using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
-{
-<div class="form-group">
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">Başlık Güncelle</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                    @using (Html.BeginForm("EditHeading", "Heading", FormMethod.Post))
+                    {
+                        <div class="form-group">
 
-    @Html.Label("ID")
-    @Html.TextBoxFor(x => x.HeadingID, new { @class = "form-control" })
-    <br />
-    @Html.Label("Başlık Adı")
-    @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
-    <br />
-    @Html.Label("Tarih")
-    @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })
-    <br />
-    @Html.Label("Yazar ID")
-    @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
-    <br />
-    @Html.Label("Kategori")
-    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
-    <br />
+                            @Html.Label("ID")
+                            @Html.TextBoxFor(x => x.HeadingID, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Başlık Adı")
+                            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Tarih")
+                            @Html.TextBoxFor(x => x.HeadingDate, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Yazar ID")
+                            @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+                            <br />
+                            @Html.Label("Kategori")
+                            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+                            <br />
 
-    @*<a href="/Heading/EditHeading/" class="btn btn-success"> Güncelle</a>*@
-    <button class="btn btn-success">Güncelle</button>
+                            @*<a href="/Heading/EditHeading/" class="btn btn-success"> Güncelle</a>*@
+                            <button class="btn btn-success">Güncelle</button>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-}
-

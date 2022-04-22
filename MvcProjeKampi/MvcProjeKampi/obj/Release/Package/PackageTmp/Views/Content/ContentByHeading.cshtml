@@ -5,51 +5,70 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-        <section class="content">
-            <div class="container-fluid">
+<div class="wrapper">
+    <div class="right_col" role="main">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <section class="content-header">
+                            <div class="container-fluid">
+                                <div class="row mb-2">
+                                    <div class="col-sm-6">
 
-                <!-- Timelime example  -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- The time line -->
-                        <div class="timeline">
-                            @foreach (var item in Model)
-                            {
-
-
-                                <!-- timeline time label -->
-                                <div class="time-label">
-                                    <span class="bg-success">@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy"))</span>
-                                </div>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <div>
-                                    <i class="fas fa-comment bg-yellow"></i>
-                                    <div class="timeline-item">
-                                        <h3 class="timeline-header"><a href="/Writer/Index/@item.WriterID">@item.Writer.WriterName  @item.Writer.WriterSurname</a> </h3>
-                                        <div class="timeline-body">
-                                            @item.ContentValue
-                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <ol class="breadcrumb float-sm-right">
+                                            <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                            <li class="breadcrumb-item active">Başlıklara Göre</li>
+                                        </ol>
                                     </div>
                                 </div>
-                            }
-                            <!-- END timeline item -->
-                        </div>
+                            </div><!-- /.container-fluid -->
+                        </section>
+                        <section class="content">
+                            <div class="container-fluid">
+
+                                <!-- Timelime example  -->
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <!-- end of user messages -->
+                                        <ul class="messages">
+                                            @foreach (var item in Model)
+                                            {
+
+                                            <li>
+                                                <img src="/AdminLTE-3.0.4/admin/production/images/img.jpg" class="avatar" alt="Avatar">
+                                                
+                                                <div class="message_wrapper">
+                                                    <h5 class="heading"><a href="/Writer/Index/@item.WriterID"> @item.Writer.WriterName.ToUpper() @item.Writer.WriterSurname.ToUpper()</a></h5>
+
+                                                   
+                                                    <blockquote class="message"> @item.ContentValue</blockquote>
+                                                    <br />
+                                                    <p class="url">
+                                                        @*<span class="fs1 text-info" aria-hidden="true" data-icon=""></span>*@
+                                                        <i class="fa fa-calendar-alt"></i>@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy"))
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            }
+                                        </ul>
+                                        <!-- end of user messages -->
+
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </section>
                     </div>
-                    <!-- /.col -->
                 </div>
             </div>
-            <!-- /.timeline -->
-        </section>
-        <!-- /.content -->
+        </div>
     </div>
-    <!-- ./wrapper -->
-</body>
-</html>
-
-
+</div>

@@ -1,0 +1,53 @@
+﻿@model MvcProjeKampi.Models.ViewModel
+
+<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+    <div class="page-wrapper">
+        @foreach (var item in Model.Contents)
+        {
+            <div class="blog-list clearfix">
+
+                <div class="blog-box row">
+
+                    <div class="col-md-4">
+                        <div class="post-media">
+                            <a href="garden-single.html" title="">
+                                <img src="@item.ContentImage" alt="" class="img-fluid">
+                                <div class="hovereffect"></div>
+                            </a>
+                        </div><!-- end media -->
+                    </div><!-- end col -->
+                    <div class="blog-meta big-meta col-md-8">
+                        <span class="bg-aqua">
+                            <a href="garden-category.html" title=""></a>@item.Heading.Category.CategoryName
+                        </span>
+                        <h4><a href="/Home/ContentDetails/@item.HeadingID" title="">@item.Heading.HeadingName</a></h4>
+                        <p>@item.ContentValue</p>
+                        @*<small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> 1887</a></small>*@
+                        <small><a href="garden-single.html" title="">@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy"))</a></small>
+                        <small><a href="#" title="">@item.Writer.WriterName @item.Writer.WriterSurname</a></small>
+                    </div><!-- end meta -->
+
+                </div><!-- end blog-box -->
+                <hr class="invis">
+
+
+
+            </div><!-- end blog-list -->
+        }
+    </div>
+    <hr class="invis">
+    <div class="row">
+        <div class="col-md-12">
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-start">
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div><!-- end col -->
+    </div>
+</div>

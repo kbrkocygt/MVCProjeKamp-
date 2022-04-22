@@ -22,12 +22,12 @@
 
                                 <!-- timeline time label -->
                                 <div class="time-label">
-                                    <span class="bg-success">@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy")) -@item.Writer.WriterName @item.Writer.WriterSurname</span>
+                                    <span style="color:darkblue">@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy")) -@item.Writer.WriterName @item.Writer.WriterSurname</span>
                                 </div>
                                 <!-- /.timeline-label -->
                                 <!-- timeline item -->
                                 <div>
-                                    <i class="fas fa-comment bg-yellow"></i>
+                                    <i class="fa fa-comment"></i>
                                     <div class="timeline-item">
                                         <h3 class="timeline-header"><a href="/Writer/Index/@item.WriterID">@item.Heading.HeadingName </a> </h3>
                                         <div class="timeline-body">

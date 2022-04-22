@@ -1,4 +1,5 @@
-﻿using DataAccesLayer.Abstract;
+﻿
+using DataAccesLayer.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -28,7 +29,7 @@ namespace DataAccesLayer.Concrete.Repositories
 
         public T Get(Expression<Func<T, bool>> filter)
         {
-            return _object.SingleOrDefault(filter);
+            return _object.FirstOrDefault(filter);
         }
 
         public void Insert(T p)

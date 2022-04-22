@@ -1,29 +1,57 @@
 ﻿@model EntittyLayer.Concrete.Heading
 
 @{
-               ViewBag.Title = "NewHeading";
-                Layout = "~/Views/Shared/_WriterLayout.cshtml";
+    ViewBag.Title = "NewHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
 
-<h1>@ViewBag.d</h1>
-<br />
-@using (Html.BeginForm("NewHeading", "WriterPanel", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.Label("Başlık Adı")
-        @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/WriterPanel/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">Yeni Başlık Ekle</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+
+                    <h1>@ViewBag.d</h1>
+                    <br />
+                    @using (Html.BeginForm("NewHeading", "WriterPanel", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            @Html.Label("Başlık Adı")
+                            @Html.TextBoxFor(x => x.HeadingName, new { @class = "form-control" })
 
 
-        @Html.ValidationMessageFor(x => x.HeadingName, "", new { @style = "color:red" })
+                            @Html.ValidationMessageFor(x => x.HeadingName, "", new { @style = "color:red" })
 
 
-        <br />
+                            <br />
 
-        @Html.Label("Kategori")
-        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.CategoryID, "", new { @style = "color:red" })
-        <br />
-      
-        <button class="btn btn-success">Başlığı Oluştur</button>
+                            @Html.Label("Kategori")
+                            @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(x => x.CategoryID, "", new { @style = "color:red" })
+                            <br />
+
+                            <button class="btn btn-success">Başlığı Oluştur</button>
+                            <a class="btn btn-danger" href="/WriterPanel/MyHeading/">Vazgeç</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
     </div>
-}
+</div>

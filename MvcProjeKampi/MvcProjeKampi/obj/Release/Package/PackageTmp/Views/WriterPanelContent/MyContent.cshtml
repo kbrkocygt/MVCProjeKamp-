@@ -1,5 +1,7 @@
 ﻿@using EntittyLayer.Concrete
-@model List<Content>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Content>
 
 @{
     ViewBag.Title = "MyContent";
@@ -9,46 +11,81 @@
 <!DOCTYPE html>
 <html>
 <body class="hold-transition sidebar-mini">
-    <!-- Site wrapper -->
-    <div class="wrapper">
-        <section class="content">
-            <div class="container-fluid">
+    <div class="right_col" role="main">
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <div class="wrapper">
 
-                <!-- Timelime example  -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- The time line -->
-                        <div class="timeline">
-                            @foreach(var item in Model)
-                            {
+                            <section class="content-header">
+                                <div class="container-fluid">
+                                    <div class="row mb-2">
+                                        <div class="col-sm-6">
 
-
-                                <!-- timeline time label -->
-                                <div class="time-label">
-                                    <span class="bg-success">@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy"))</span>
-                                </div>
-                                <!-- /.timeline-label -->
-                                <!-- timeline item -->
-                                <div>
-                                    <i class="fas fa-comment bg-yellow"></i>
-                                    <div class="timeline-item">
-                                        <h3 class="timeline-header"><a href="/Writer/Index/@item.WriterID">@item.Heading.HeadingName </a> </h3>
-                                        <div class="timeline-body">
-                                            @item.ContentValue
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ol class="breadcrumb float-sm-right">
+                                                <li class="breadcrumb-item"><a href="/WriterPanel/Home/">Home</a></li>
+                                                <li class="breadcrumb-item active">Yazılarım</li>
+                                            </ol>
                                         </div>
                                     </div>
+                                </div><!-- /.container-fluid -->
+                            </section>
+                            <section class="content">
+                                <div class="container-fluid">
+
+                                    <!-- Timelime example  -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <!-- The time line -->
+                                            <div class="timeline">
+                                                @foreach (var item in Model)
+                                                {
+
+
+                                                    <!-- timeline time label -->
+                                                    <div class="time-label">
+                                                        <span style="color:darkblue">@item.Writer.WriterName.ToUpper() @item.Writer.WriterSurname.ToUpper()</span>
+                                                    </div>
+                                                    <!-- /.timeline-label -->
+                                                    <!-- timeline item -->
+                                                    <div>
+
+                                                        <div class="timeline-item">
+                                                            <h3 class="timeline-header"><a href="#">@item.Heading.HeadingName </a> </h3>
+                                                            <div class="timeline-body">
+                                                                @item.ContentValue
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <i class="fas fa-clock"><span>@(((DateTime)item.ContentDate).ToString("dd.MMM.yyyy"))</span></i>
+                                                    <br />
+                                                }
+                                                <!-- END timeline item -->
+                                            </div>
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
                                 </div>
-                            }
-                            <!-- END timeline item -->
+                                <!-- /.timeline -->
+                            </section>
+
+                            @Html.PagedListPager((IPagedList)Model , page=>Url.Action("MyContent", new { page}),new PagedListRenderOptions
+        {
+        LiElementClasses=new List<string>
+        { "page-link"}
+        })
+                            <!-- /.content -->
                         </div>
                     </div>
-                    <!-- /.col -->
                 </div>
             </div>
-            <!-- /.timeline -->
-        </section>
-        <!-- /.content -->
+        </div>
     </div>
+
     <!-- ./wrapper -->
 </body>
 </html>

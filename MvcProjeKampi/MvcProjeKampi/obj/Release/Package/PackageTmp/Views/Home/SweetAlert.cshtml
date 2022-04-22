@@ -6,22 +6,47 @@
 <br />
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="~/Scripts/jquery-3.3.1.js"></script>
+<div class="right_col" role="main">
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <section class="content-header">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-sm-6">
 
-<button class="btn btn-primary" id="btn1">Sweet</button>
-<button class="btn btn-warning" id="btn2">Sweet</button>
-<button class="btn btn-info" id="btn3">Sweet</button>
-<script>
-    $('#btn1').click(function () {
-        swal("Merhaba mvc proje kampı!");
-    });
-</script>
-<script>
-    $('#btn2').click(function () {
-        swal("Mvc proje kampı!", "Ders 96");
-    });
-</script>
-<script>
-    $('#btn3').click(function () {
-        swal("Tebrikler", "Başarılı bir şekilde eklendi!", "success");
-    });
-</script>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ol class="breadcrumb float-sm-right">
+                                        <li class="breadcrumb-item"><a href="/AdminCategory/Home/">Home</a></li>
+                                        <li class="breadcrumb-item active">SweetAlert</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div><!-- /.container-fluid -->
+                    </section>
+                    <button class="btn btn-primary" id="btn1">Sweet</button>
+                    <button class="btn btn-warning" id="btn2">Sweet</button>
+                    <button class="btn btn-info" id="btn3">Sweet</button>
+                    <script>
+                        $('#btn1').click(function () {
+                            swal("Merhaba mvc proje kampı!");
+                        });
+                    </script>
+                    <script>
+                        $('#btn2').click(function () {
+                            swal("Mvc proje kampı!", "Ders 96");
+                        });
+                    </script>
+                    <script>
+                        $('#btn3').click(function () {
+                            swal("Tebrikler", "Başarılı bir şekilde eklendi!", "success");
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
